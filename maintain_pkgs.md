@@ -14,3 +14,4 @@ gbp:error: upstream/2023.2.4 is not a valid treeish
 W: Unable to locate package burpsuite
 Could not find any location for burpsuite_2023.2.4.orig.tar.*
 ```
+Solution could be creat tags and push. However, this non-standard package might create problems
