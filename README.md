@@ -51,4 +51,4 @@ A short note of my idea about my new project. Outsiders is an external repositor
 3. Upload to main branch
 
 TODO: configurations of packages, how to build, how to install, ...
-TODO: Research how to use github CI-CD to do automation build. This also means saving time and resources for maintainer
+TODO: Research how to use github CI-CD to do automation build. This also means saving time and resources for maintainer https://about.gitlab.com/blog/2016/10/12/automated-debian-package-build-with-gitlab-ci/
