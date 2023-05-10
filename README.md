@@ -21,8 +21,30 @@ A short note of my idea about my new project. Outsiders is an external repositor
 - Fast update. With automation solution, all upstream packages should be uploaded every week, or even everyday
 - Fast patches for build time and packaging time for all tools and libraries
 - No time gaps for system updating. At this point, some Debian-based distro will have to fork and rebuild packages from Debian.
-# Problems
-- Build time
-- Packaging time
-- Installation time
-- Runtime
+- Todo: Multi-arch support
+# Definition
+- Upstream source: The source code of the original project
+- Build time: Program's compilation progress
+- Packaging time: The progress that makes a Debian package. It could have build time to compile packages (C, Cpp, Go) projects
+- Installation time: When the package is installed inside the system.
+- Runtime: When the program starts
+# Issues might have
+- Upstream update: Some repository doesn't have releases or tags. Or the source code files don't include full source code
+- Build time: Missing build dependencies. Any error when compile the project
+- Packaging time: Missing build time dependencies. Error violating Debian's build standard
+- Installation time: Missing runtime dependencies 
+- Runtime: Program crashes, have error due to missing configs or bugs of current upstream version
+# Tools and Workflow
+## Tools
+- git-buildpackage (command `gbp`) to update upstream source
+- A tool to build (not decided for now) package
+- A custom script to update upstream source, build, and upload package to testing branch automatically, with error handling.
+- Any tools for better development process. Update later
+# Workflow
+1. Update latest upstream code to the build server
+2a) Build package (test)
+2b) Fix build time issues
+2c) Upload package to test branch (PPA repository)
+2d) Test runtime
+2e) Fix installation time issues, runtime issues, return 2a
+3. Upload to main branch
