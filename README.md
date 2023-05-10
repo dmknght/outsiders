@@ -5,7 +5,7 @@ A short note of my idea about my new project. Outsiders is an external repositor
 1. Testing branch, for latest update of all packages. Bugs are expected
 2. Main branch, to use
 - A gitlab repository that contains upstream source and Debian configs to build the package
-- A build server (local) to do
+- A build server (local, using Debian stable)
 1. Automation upstream update
 2. Automation build
 3. Test, fix
@@ -36,8 +36,9 @@ A short note of my idea about my new project. Outsiders is an external repositor
 - Runtime: Program crashes, have error due to missing configs or bugs of current upstream version
 # Tools and Workflow
 ## Tools
-- git-buildpackage (command `gbp`) to update upstream source
-- A tool to build (not decided for now) package
+- `git-buildpackage` (command `gbp`) to update upstream source
+- `dh_make` and `devscripts` tools: Generate Debian's configurations to package
+- A tool to build (not decided for now) package in the build server
 - A custom script to update upstream source, build, and upload package to testing branch automatically, with error handling.
 - Any tools for better development process. Update later
 # Workflow
@@ -48,3 +49,5 @@ A short note of my idea about my new project. Outsiders is an external repositor
 2d) Test runtime
 2e) Fix installation time issues, runtime issues, return 2a
 3. Upload to main branch
+
+TODO: configurations of packages, how to build, how to install, ...
