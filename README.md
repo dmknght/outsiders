@@ -42,13 +42,24 @@ A short note of my idea about my new project. Outsiders is an external repositor
 - A custom script to update upstream source, build, and upload package to testing branch automatically, with error handling.
 - Any tools for better development process. Update later
 # Workflow
+## The current idea
 1. Update latest upstream code to the build server
-2a) Build package (test)
-2b) Fix build time issues
+2a) Build package (local build server)
+2b) Fix build time issues (local build server)
 2c) Upload package to test branch (PPA repository)
-2d) Test runtime
-2e) Fix installation time issues, runtime issues, return 2a
+2d) Test runtime (local test machine)
+2e) Fix installation time issues, runtime issues, return 2a (local build server)
 3. Upload to main branch
+
+## The idea with CI
+1. Update latest upstream code version (Local build server)
+2. Provide package in testing stage
+   a. Build package (Gitlab CI)
+   b. Create patch fix for package time issue if there's any (Local build server). Return 2a.
+   c. Upload package to PPA repo, test branch (Gitlab CI)
+   d. Test runtime (Local test machine)
+   e. Create patch fix for runtime issue if there's any (Local build server). Return 2a.
+3. Upload package to main branch (Manually? Need research)
 
 TODO: configurations of packages, how to build, how to install, ...
 TODO: Research how to use github CI-CD to do automation build. This also means saving time and resources for maintainer https://about.gitlab.com/blog/2016/10/12/automated-debian-package-build-with-gitlab-ci/
